@@ -1,5 +1,5 @@
 import { getContext } from "unctx";
-import { Nitro } from "../types/nitro";
+import type { Nitro } from "../types/nitro";
 
 /** Direct access to the Nitro context. */
 export const nitroContext = getContext<Nitro>("nitro");

@@ -3,7 +3,7 @@ import type { NitroDevEventHandler, NitroEventHandler } from "../types/handler";
 import { fileURLToPath } from "node:url";
 import { useNitro } from "./context";
 import { normalize } from "pathe";
-import { RouterMethod } from "h3";
+import type { RouterMethod } from "h3";
 
 /**
  * Defines a Nitro module.
