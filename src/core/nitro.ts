@@ -15,6 +15,7 @@ import { installModules } from "./module";
 import { scanAndSyncOptions } from "./scan";
 import { addNitroTasksVirtualFile } from "./task";
 import { createStorage } from "./utils/storage";
+import { nitroContext } from "../kit/context";
 
 export async function createNitro(
   config: NitroConfig = {},
@@ -36,6 +37,12 @@ export async function createNitro(
       updateNitroConfig(nitro, config);
     },
   };
+
+  // Set Nitro context for `useNitro`. We should verify if it exists because prerender will call the `createNitro` which will reset the context and throw an error.
+  if (!nitroContext.tryUse()) {
+    nitroContext.set(nitro);
+    nitro.hooks.hook("close", () => nitroContext.unset());
+  }
 
   // Scan dirs and sync options
   // TODO: Make it side-effect free to allow proper watching
