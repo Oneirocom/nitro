@@ -39,6 +39,7 @@ import { storage } from "./plugins/storage";
 import { timing } from "./plugins/timing";
 import { virtual } from "./plugins/virtual";
 import { resolveAliases } from "./utils";
+import { magickNodes } from "./plugins/magick/nodes";
 
 export const getRollupConfig = (nitro: Nitro): RollupConfig => {
   const extensions: string[] = [
@@ -322,6 +323,9 @@ export const getRollupConfig = (nitro: Nitro): RollupConfig => {
   rollupConfig.plugins.push(virtual(nitro.options.virtual, nitro.vfs));
 
   const nitroPlugins = [...new Set(nitro.options.plugins)];
+
+  // Magick
+  rollupConfig.plugins.push(magickNodes(nitro));
 
   // Plugins
   rollupConfig.plugins.push(
