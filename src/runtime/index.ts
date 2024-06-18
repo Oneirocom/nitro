@@ -36,3 +36,13 @@ export {
   cachedFunction,
   cachedEventHandler,
 } from "./internal/cache";
+
+// Nodes
+export {
+  defineNode,
+  defineAsyncNode,
+  defineFlowNode,
+  defineEventNode,
+  defineFunctionNode,
+  initNodes,
+} from "./internal/magick/nodes";

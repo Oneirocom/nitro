@@ -76,6 +76,14 @@ function getNitroImportsPreset(): Preset[] {
         "defineTask",
         "runTask",
         "defineNitroErrorHandler",
+
+        // Magick
+        "defineNode",
+        "defineAsyncNode",
+        "defineFlowNode",
+        "defineEventNode",
+        "defineFunctionNode",
+        "initNodes",
       ],
     },
   ];
