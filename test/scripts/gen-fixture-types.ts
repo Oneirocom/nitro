@@ -2,6 +2,7 @@ import { fileURLToPath } from "mlly";
 import { createNitro, writeTypes } from "nitro/core";
 import { resolve } from "pathe";
 import { scanHandlers } from "../../src/core/scan";
+import { scanMagickPaths } from "../../src/core/scan-magick";
 
 const prepare = async () => {
   const fixtureDir = fileURLToPath(new URL("../fixture", import.meta.url).href);
@@ -13,6 +14,7 @@ const prepare = async () => {
   });
 
   await scanHandlers(nitro);
+  await scanMagickPaths(nitro);
   await writeTypes(nitro);
 };
 

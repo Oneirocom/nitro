@@ -11,12 +11,14 @@ import { nitroServerName } from "../utils/nitro";
 import { snapshotStorage } from "../utils/storage";
 import { formatRollupError } from "./error";
 import { writeTypes } from "./types";
+import { scanMagickPaths } from "../scan-magick";
 
 export async function buildProduction(
   nitro: Nitro,
   rollupConfig: RollupConfig
 ) {
   await scanHandlers(nitro);
+  await scanMagickPaths(nitro);
   await writeTypes(nitro);
   await _snapshot(nitro);
 

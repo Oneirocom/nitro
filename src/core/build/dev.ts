@@ -8,6 +8,7 @@ import { GLOB_SCAN_PATTERN, scanHandlers } from "../scan";
 import { nitroServerName } from "../utils/nitro";
 import { formatRollupError } from "./error";
 import { writeTypes } from "./types";
+import { scanMagickPaths } from "../scan-magick";
 
 export async function watchDev(nitro: Nitro, rollupConfig: RollupConfig) {
   let rollupWatcher: rollup.RollupWatcher;
@@ -17,6 +18,7 @@ export async function watchDev(nitro: Nitro, rollupConfig: RollupConfig) {
       await rollupWatcher.close();
     }
     await scanHandlers(nitro);
+    await scanMagickPaths(nitro);
     rollupWatcher = startRollupWatcher(nitro, rollupConfig);
     await writeTypes(nitro);
   }
