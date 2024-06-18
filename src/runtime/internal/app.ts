@@ -27,6 +27,7 @@ import { useRuntimeConfig } from "./config";
 import { nitroAsyncContext } from "./context";
 import { createRouteRulesHandler, getRouteRulesForPath } from "./route-rules";
 import { normalizeFetchResponse } from "./utils";
+import { initNodes } from "./magick/nodes";
 
 function createNitroApp(): NitroApp {
   const config = useRuntimeConfig();
@@ -180,6 +181,9 @@ function createNitroApp(): NitroApp {
     localFetch,
     captureError,
   };
+
+  /* Magick */
+  initNodes();
 
   for (const plugin of plugins) {
     try {
