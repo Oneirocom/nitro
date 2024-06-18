@@ -58,7 +58,11 @@
     "nitro": "./dist/cli/index.mjs",
     "nitropack": "./dist/cli/index.mjs"
   },
-  "files": ["dist", "*.d.ts", "runtime-meta.*"],
+  "files": [
+    "dist",
+    "*.d.ts",
+    "runtime-meta.*"
+  ],
   "scripts": {
     "build": "pnpm gen-presets && unbuild",
     "dev": "pnpm nitro dev playground",
@@ -83,6 +87,7 @@
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.3.2",
+    "@magickml/behave-graph": "^0.14.14",
     "@netlify/functions": "^2.7.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^26.0.1",

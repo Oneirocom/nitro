@@ -20,6 +20,9 @@ importers:
       '@cloudflare/kv-asset-handler':
         specifier: ^0.3.2
         version: 0.3.2
+      '@magickml/behave-graph':
+        specifier: ^0.14.14
+        version: 0.14.14
       '@netlify/functions':
         specifier: ^2.7.0
         version: 2.7.0(@opentelemetry/api@1.9.0)
@@ -1213,6 +1216,9 @@ packages:
 
   '@lezer/yaml@1.0.3':
     resolution: {integrity: sha512-GuBLekbw9jDBDhGur82nuwkxKQ+a3W5H0GfaAthDXcAu+XdpS43VlnxA9E9hllkpSP5ellRDKjLLj7Lu9Wr6xA==}
+
+  '@magickml/behave-graph@0.14.14':
+    resolution: {integrity: sha512-1jS1Z4SWTPwL/HNkVz6fzj3zsLI93dtfgsOCS7sGN4vzTDjm10GrVuEn2O781iQCZMwPrHpzwQovk1VRBah38Q==}
 
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
@@ -7158,6 +7164,8 @@ snapshots:
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.0
       '@lezer/lr': 1.4.1
+
+  '@magickml/behave-graph@0.14.14': {}
 
   '@mapbox/node-pre-gyp@1.0.11':
     dependencies:
