@@ -36,6 +36,11 @@ export async function createNitro(
     async updateConfig(config: NitroDynamicConfig) {
       updateNitroConfig(nitro, config);
     },
+
+    magick: {
+      scannedNodes: [],
+    },
+    agent: {},
   };
 
   // Set Nitro context for `useNitro`. We should verify if it exists because prerender will call the `createNitro` which will reset the context and throw an error.

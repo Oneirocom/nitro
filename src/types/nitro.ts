@@ -8,6 +8,7 @@ import type { NitroConfig, NitroOptions } from "./config";
 import type { NitroEventHandler } from "./handler";
 import type { NitroHooks } from "./hooks";
 import type { PrerenderRoute } from "./prerender";
+import type { Magick } from "./magick";
 
 export interface Nitro {
   options: NitroOptions;
@@ -19,6 +20,9 @@ export interface Nitro {
   storage: Storage;
   close: () => Promise<void>;
   updateConfig: (config: NitroDynamicConfig) => void | Promise<void>;
+
+  magick: Magick;
+  agent: any;
 
   /* @internal */
   _prerenderedRoutes?: PrerenderRoute[];
